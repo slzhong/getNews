@@ -1,0 +1,10 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+.iframe{
+	width: 1024px;
+	height: 676px;
+}
