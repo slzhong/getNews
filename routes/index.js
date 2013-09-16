@@ -10,29 +10,25 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'news of info@scau' });
 };
 
 exports.news = function(req, res){
 	request('http://info.scau.edu.cn/' + req.params.urlStr, function (error, response, data){
 		if(!error && response.statusCode == 200){
 			var $ = cheerio.load(data);
-			//for tests only, will be changed to a json array later
-			var html = 
-			'<!doctype html>' +
-			'<html>' +
-			'<head>' +
-			'<meta charset="UTF-8">' +
-			'<title>' + $('title').text() + '</title>' +
-			'</head>' +
-			'<body>' +
-			'<table>' +
-			$('.data-table').children();
-			'</table>' +
-			'</body>' +
-			'</html>';
+			var result = '';
+			var tr = $('.data-table tr');
+			console.log(tr.length);
+			for(var i = 1; i < tr.length; i++){
+				result += $(tr[i]).text() + '<br><br>';
+			}
+			// var html = 
+			// '<table>' +
+			// $('.data-table').children();
+			// '</table>'
 			res.writeHead(200, {"Content-Type":"text/html"});
-			res.end(html);
+			res.end(result);
 		}
 		else{
 			console.log(error);
