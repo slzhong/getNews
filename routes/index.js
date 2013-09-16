@@ -23,10 +23,6 @@ exports.news = function(req, res){
 			for(var i = 1; i < tr.length; i++){
 				result += $(tr[i]).text() + '<br><br>';
 			}
-			// var html = 
-			// '<table>' +
-			// $('.data-table').children();
-			// '</table>'
 			res.writeHead(200, {"Content-Type":"text/html"});
 			res.end(result);
 		}
