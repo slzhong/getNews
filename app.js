@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/list/:urlStr/:page', routes.list);
+app.get('/article/:urlStr', routes.article);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('server listening on port ' + app.get('port'));

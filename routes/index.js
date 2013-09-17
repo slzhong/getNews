@@ -21,14 +21,18 @@ exports.list = function(req, res){
 			var tr = $('.data-table tr');
 			if(tr.length > 1){
 				for(var i = 1; i < tr.length; i++){
+					var reg=/<a\s[^>]*href=['"]?([^'">]+\.asp?)['"]?/ig;
+					var str = $($(tr[i]).children()[0]).html();
+					var href = (reg.test(str)) ? RegExp.$1 : null;
 					var data = {
-						link : $($(tr[i]).children()[0]).html(),
+						link : href,
+						title : $($(tr[i]).children()[0]).text(),
 						date : $($(tr[i]).children()[5]).text(),
 						from : $($(tr[i]).children()[1]).text()
 					}
 					result.push(data);
 				}
-				res.writeHead(200, {"Content-Type":"text/html"});
+				res.writeHead(200, {"Content-Type":"text/plain"});
 				res.end(JSON.stringify(result));
 			}
 			else{
@@ -40,4 +44,21 @@ exports.list = function(req, res){
 			console.log(error);
 		}
 	});
+}
+
+exports.article = function(req, res){
+	request('http://info.scau.edu.cn/' + req.params.urlStr, function (error, response, data){
+		if(!error && response.statusCode == 200){
+			var $ = cheerio.load(data);
+			var result = {
+				title : $('h1').text(),
+				content : $('#content').html()
+			}
+			res.writeHead(200, {'Content-Type' : 'text/plain'});
+			res.end(JSON.stringify(result));
+		}
+		else{
+			console.log(error);
+		}
+	})
 }

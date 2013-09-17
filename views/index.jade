@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  ul
+  ul(id='nav')
     li(class='nav-btn' urlstr='news-cate-2.asp' nextpage='1') 学院动态
     br
     li(class='nav-btn' urlstr='news-cate-3.asp' nextpage='1') 学术新闻
@@ -19,4 +19,9 @@ block content
     li(class='nav-btn' urlstr='news-cate-6.asp' nextpage='1') 研究生通知
     br
     li(class='nav-btn' urlstr='news-cate-7.asp' nextpage='1') 本科生通知
-  div(id='list')
+  div
+    ul(id='news-list')
+  br
+  br
+  br
+  div(id='news-article')

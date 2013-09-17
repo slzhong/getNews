@@ -5,15 +5,15 @@
 	font-family: Tahoma, sans-serif;
 }
 
-ul{
+#nav{
 	width: 100px;
 	height: 325px;
 	float: right;
 }
 
-.nav-btn{
+.nav-btn,.list-item{
 	cursor: pointer;
 }
-.nav-btn:hover{
+.nav-btn:hover,.list-item:hover{
 	text-decoration: underline;
 }
