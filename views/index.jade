@@ -1,16 +1,22 @@
 extends layout
 
 block content
-  h1 news of info@scau
-  br
-  br
   ul
-    li(class='nav-btn' url_str='news-cate-2.asp') 学院动态
+    li(class='nav-btn' urlstr='news-cate-2.asp' nextpage='1') 学院动态
     br
-    li(class='nav-btn' url_str='news-cate-3.asp') 学术新闻
+    li(class='nav-btn' urlstr='news-cate-3.asp' nextpage='1') 学术新闻
     br
-    li(class='nav-btn' url_str='news-cate-9.asp') 党群动态
-  br
-  br
-  br
+    li(class='nav-btn' urlstr='news-cate-9.asp' nextpage='1') 党群动态
+    br
+    li(class='nav-btn' urlstr='news-cate-10.asp' nextpage='1') 学生动态
+    br
+    li(class='nav-btn' urlstr='news-cate-12.asp' nextpage='1') 就业指导
+    br
+    li(class='nav-btn' urlstr='news-cate-11.asp' nextpage='1') 招生信息
+    br
+    li(class='nav-btn' urlstr='news-cate-5.asp' nextpage='1') 教师通知
+    br
+    li(class='nav-btn' urlstr='news-cate-6.asp' nextpage='1') 研究生通知
+    br
+    li(class='nav-btn' urlstr='news-cate-7.asp' nextpage='1') 本科生通知
   div(id='list')
