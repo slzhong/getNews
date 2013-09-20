@@ -19,11 +19,14 @@ function getList(){
 				e.target.setAttribute('nextpage', parseInt(e.target.getAttribute('nextpage')) + 1);
 				var obj = eval('(' + ajax.responseText + ')');
 				for(var i = 0; i < obj.length; i++){
-					var listItem = document.createElement('li');
+					var list = document.createElement('li');
+					var listItem = document.createElement('a');
 					listItem.className = 'list-item';
+					listItem.setAttribute('href', '#news-article-page');
 					listItem.setAttribute('urlstr', obj[i].link);
 					listItem.innerHTML = obj[i].title + '&nbsp;&nbsp;' + obj[i].date + '&nbsp;&nbsp;' + obj[i].from;
-					container.appendChild(listItem);
+					list.appendChild(listItem);
+					container.appendChild(list);
 				}
 				var link = $('.list-item');
 				for(var i = 0; i < link.length; i++){

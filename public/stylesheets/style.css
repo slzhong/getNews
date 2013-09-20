@@ -5,12 +5,6 @@
 	font-family: Tahoma, sans-serif;
 }
 
-#nav{
-	width: 100px;
-	height: 325px;
-	float: right;
-}
-
 .nav-btn,.list-item{
 	cursor: pointer;
 }

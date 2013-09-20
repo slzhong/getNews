@@ -1,27 +1,55 @@
 extends layout
 
 block content
-  ul(id='nav')
-    li(class='nav-btn' urlstr='news-cate-2.asp' nextpage='1') 学院动态
-    br
-    li(class='nav-btn' urlstr='news-cate-3.asp' nextpage='1') 学术新闻
-    br
-    li(class='nav-btn' urlstr='news-cate-9.asp' nextpage='1') 党群动态
-    br
-    li(class='nav-btn' urlstr='news-cate-10.asp' nextpage='1') 学生动态
-    br
-    li(class='nav-btn' urlstr='news-cate-12.asp' nextpage='1') 就业指导
-    br
-    li(class='nav-btn' urlstr='news-cate-11.asp' nextpage='1') 招生信息
-    br
-    li(class='nav-btn' urlstr='news-cate-5.asp' nextpage='1') 教师通知
-    br
-    li(class='nav-btn' urlstr='news-cate-6.asp' nextpage='1') 研究生通知
-    br
-    li(class='nav-btn' urlstr='news-cate-7.asp' nextpage='1') 本科生通知
-  div
-    ul(id='news-list')
-  br
-  br
-  br
-  div(id='news-article')
+  div(data-role='page' id='news-home-page')
+    div(data-role='header' data-position='fixed')
+      h1 home
+    div(data-role='content')
+      ul(id='nav')
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-2.asp' nextpage='1') 学院动态
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-3.asp' nextpage='1') 学术新闻
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-9.asp' nextpage='1') 党群动态
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-10.asp' nextpage='1') 学生动态
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-12.asp' nextpage='1') 就业指导
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-11.asp' nextpage='1') 招生信息
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-5.asp' nextpage='1') 教师通知
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-6.asp' nextpage='1') 研究生通知
+        br
+        li
+          a(href='#news-list-page' class='nav-btn' urlstr='news-cate-7.asp' nextpage='1') 本科生通知
+    div(data-role='footer' data-position='fixed')
+      h1 footer
+  div(data-role='page' id='news-list-page')
+    div(data-role='header' data-position='fixed')
+      h1 list
+    div(data-role='content')
+      ul(id='news-list')
+    div(data-role='footer' data-position='fixed')
+      h1 footer
+  div(data-role='page' id='news-article-page')
+    div(data-role='header' data-position='fixed')
+      h1 article
+    div(data-role='content')
+      div(id='news-article')
+    div(data-role='footer' data-position='fixed')
+      div(data-role='navbar')
+        ul
+          li
+            a(href='#news-home-page') Home
+          li
+            a(href='#news-list-page') Back
