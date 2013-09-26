@@ -51,7 +51,7 @@ exports.article = function(req, res){
 		if(!error && response.statusCode == 200){
 			var $ = cheerio.load(data);
 			var result = {
-				title : $('h1').text(),
+				title : $('h1').first().text(),
 				content : $('#content').html()
 			}
 			res.writeHead(200, {'Content-Type' : 'text/plain'});

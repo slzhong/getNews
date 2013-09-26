@@ -34,6 +34,7 @@ block content
           a(href='#news-list-page' class='nav-btn' urlstr='news-cate-7.asp' nextpage='1') 本科生通知
     div(data-role='footer' data-position='fixed')
       h1 footer
+
   div(data-role='page' id='news-list-page')
     div(data-role='header' data-position='fixed')
       h1 list
@@ -41,15 +42,16 @@ block content
       ul(id='news-list')
     div(data-role='footer' data-position='fixed')
       h1 footer
+
   div(data-role='page' id='news-article-page')
     div(data-role='header' data-position='fixed')
-      h1 article
+      h1(id='news-article-title')
     div(data-role='content')
-      div(id='news-article')
+      div(id='news-article-content')
     div(data-role='footer' data-position='fixed')
       div(data-role='navbar')
         ul
           li
             a(href='#news-home-page') Home
           li
-            a(href='#news-list-page') Back
+            a(href='#news-list-page' class='back-btn') Back
