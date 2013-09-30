@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Info @ SCAU</title>
+	<link rel="stylesheet" href="stylesheets/jquery.mobile-1.3.2.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+	<div data-role="page" id="news-home-page">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Info @ SCAU</h1>
+		</div>
+		<div data-role="content">
+			<ul id="nav">
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-2.asp" nextpage="1">
+						学院动态
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-3.asp" nextpage="1">
+						学术新闻
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-9.asp" nextpage="1">
+						党群动态
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-10.asp" nextpage="1">
+						学生动态
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-12.asp" nextpage="1">
+						就业指导
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-11.asp" nextpage="1">
+						招生信息
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-5.asp" nextpage="1">
+						教师通知
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-6.asp" nextpage="1">
+						研究生通知
+					</a>
+				</li>
+				<li>
+					<a href="#news-list-page" class="nav-btn" urlstr="news-cate-7.asp" nextpage="1">
+						本科生通知
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="page" id='news-list-page'>
+		<div data-role='header' data-position='fixed' data-theme="b">
+			<h1 id="news-list-title"></h1>
+		</div>
+		<div data-role='content'>
+			<ul id="news-list"></ul>
+			<div id="news-list-more">加载更多</div>
+		</div>
+		<div data-role='footer' data-position='fixed' data-theme="b">
+			<div data-role='navbar'>
+				<ul>
+					<li>
+						<a href='#news-home-page' data-icon='home'>
+							返回首页
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="news-article-page">
+		<div data-role='header' data-position='fixed' data-theme="b">
+			<h1 id="news-article-title"></h1>
+		</div>
+		<div data-role='content'>
+			<div id="news-article-content"></div>
+		</div>
+		<div data-role='footer' data-position='fixed' data-theme="b">
+			<div data-role='navbar'>
+				<ul>
+					<li>
+						<a href='#news-home-page' data-icon='home'>
+							首页
+						</a>
+					</li>
+					<li>
+						<a href="#news-list-page" data-icon="back">
+							后退
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="javascripts/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.mobile-1.3.2.min.js"></script>
+	<script type="text/javascript" src="javascripts/template.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+</body>
+</html>
