@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	GetNewsMain.init();
+});
+
 var GetNewsMain = {
 	init : function(){
 		GetNewsMain.bindEvent();
@@ -39,17 +43,23 @@ var GetNewsMain = {
 			function(result){
 				$('#news-article-title').text(result.title);
 				$('#news-article-content').html(result.content);
-				var img = $('#news-article-content').find('img');
-				for(var i = 0; i < img.length; i++){
-					var srcStr = 'http://info.scau.edu.cn/' + $(img[i]).attr('src');
-					$(img[i]).attr('src', srcStr);
-					console.log($(img[i]).css('margin-left'));
-				}
+				//fix the image problems
+				GetNewsMain.getArticleImages();
 			});
 		}
+	},
+	getArticleImages : function(){
+		var windowWidth = $(window).width();
+		var img = $('#news-article-content').find('img');
+		for(var i = 0; i < img.length; i++){
+			//handle the url problem
+			var srcStr = 'http://info.scau.edu.cn/' + $(img[i]).attr('src');
+			$(img[i]).attr('src', srcStr);
+			//fix the style of images
+			var proportion = $(img[i]).attr('width') / $(img[i]).attr('height');
+			$(img[i]).attr('width', windowWidth * 0.9);
+			$(img[i]).attr('height', windowWidth * 0.9 / proportion);
+			$(img[i]).parent().css('text-align', 'center');
+		}
 	}
-}
-
-window.onload = function(){
-	GetNewsMain.init();
 }
